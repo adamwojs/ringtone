@@ -64,14 +64,14 @@ Type
             MenuEditor : TMenu; //Przchowuje kolorystyke menu i aktualna pozycje kursora w menu
             MenuItems : array[0..5] of string; //Przechowuje teksty przyciskow w menu
 
-            function MaxDzw : byte;  //zwraca liczbe skladowych dŸwiêków na dzwonek
+            function MaxDzw : byte;  //zwraca liczbe skladowych dÅºwiÄ™kÃ³w na dzwonek
             procedure IncColumn(i : shortint); //Przechodzi do nastepnejkolumny
 
             procedure WyswietlMenu;            //Wyswietla menu
-            procedure WyswietlTabele;          //Wyswietla tablice z dŸwiêkami
+            procedure WyswietlTabele;          //Wyswietla tablice z dÅºwiÄ™kami
 
-            procedure Inicjalizuj;             //Ustalenie kolorystyki, przypisanie tekstów do przysckow
-            procedure ReadOdp;                 //!!! Czyta reakcje u¿ytkownika
+            procedure Inicjalizuj;             //Ustalenie kolorystyki, przypisanie tekstÃ³w do przysckow
+            procedure ReadOdp;                 //!!! Czyta reakcje uÅ¼ytkownika
             procedure DzwRead;                 //Pyta o czestotliwosc i dlugosc trwania dzwieku
             procedure DzwAdd(Dz : TDzwiek);    //Dodaje do tablicy dzwiek
             procedure DzwPlay (Dzw : TDzwiek); //Odgrywa pojedynczy dzwiek
@@ -86,7 +86,7 @@ Type
            MenuItems : array[0..2] of string; //Przyciski Menu Dolnego
            MenuSkr : TMenu;         //Menu Dolne
 
-           TableColors : TMenu;           //Tablica ze sktótami
+           TableColors : TMenu;           //Tablica ze sktÃ³tami
            PTColor, PBColor : byte; //Kolor Tekstu i Tla parzystego elementu
 
            procedure InicjalizujMenu;  //Ustalenie kolorystkyki, tekstow przyciskow w dolnym menu
@@ -95,7 +95,7 @@ Type
 //           procedure WyswietlTabele;   //Odpowiedzialne za wyswietlenie Tablicy ze skrotami
 
            procedure SkrRead(key : byte); //Sprawdza przypisanie do skrotu do klawisza i reaguje na skrot
-           procedure SkrAdd;              //Dodaje di tablicy skrot(!!! lub modyfikuje jeœli wczesniej przypisano)
+           procedure SkrAdd;              //Dodaje di tablicy skrot(!!! lub modyfikuje jeÅ›li wczesniej przypisano)
            procedure SkrDelete;           //Usuwa skrot z tablicy
 
            end;
@@ -105,8 +105,8 @@ var
    F : file of TDzwiek; //Plik z dzwonkiem ze sciezki FName
    Menu : TMenuG;
    Editor : TEditor;
-   FName : string;      //Sciezka dostepu do pilku z dzwonekim, jesli = '' standardowo przyjmuje wartoœæ C:\TEMP.DZW
-   DzwonekDz : array[0..255] of TDzwiek; //Tablica dŸwiêków
+   FName : string;      //Sciezka dostepu do pilku z dzwonekim, jesli = '' standardowo przyjmuje wartoÅ›Ä‡ C:\TEMP.DZW
+   DzwonekDz : array[0..255] of TDzwiek; //Tablica dÅºwiÄ™kÃ³w
    MessageOpt : TMessageOptions;
    Skr : TSkr;
 
@@ -256,7 +256,7 @@ begin
            end;
 end;
 
-function TEditor.MaxDzw : byte; {Zwraca ilo˜† element¢w d«wi©ku}
+function TEditor.MaxDzw : byte; {Zwraca iloÂ˜â€  elementË˜w dÂ«wiÂ©ku}
 var
    i : byte;
 begin
@@ -265,7 +265,7 @@ begin
      MaxDzw := i;
 end;
 
-procedure TEditor.IncColumn(i : shortint); {i C (-128..127); Column zostanie zwi©kzone o i}
+procedure TEditor.IncColumn(i : shortint); {i C (-128..127); Column zostanie zwiÂ©kzone o i}
 begin
      case Column of
             1 : Inc(Column,i);
@@ -539,10 +539,10 @@ var
    error : integer;
 begin
      ClrScr;
-     ProgCommend('Cz©stotliwo˜† d«wi©ku:');
+     ProgCommend('CzÂ©stotliwoÂ˜â€  dÂ«wiÂ©ku:');
      Readln(s);
      val(s,TmpDzw.Hz,error);
-     ProgCommend('Podaj dˆugo˜† trwania d«wi©ku(w ms)');
+     ProgCommend('Podaj dÂˆugoÂ˜â€  trwania dÂ«wiÂ©ku(w ms)');
      Readln(s);
      val(s,TmpDzw.Ms,error);
 
@@ -768,7 +768,7 @@ var
 begin
      for i := 0 to 24 do
          begin
-              if i = TSkr.TableColors.ActItem then //Jeœli element i zaznaczony...
+              if i = TSkr.TableColors.ActItem then //JeÅ›li element i zaznaczony...
                  begin
                       TextColor(TSkr.TableColors.ZazItemTColor); //zmien kolor jego tekstu na zaznaczony
                       TextBackground(TSkr.TableColors.ZazITemBColor); //Zmien tlo jego tekstu na zaznaczony
